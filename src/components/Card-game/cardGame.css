@@ -1,0 +1,79 @@
+.main-board {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 1300px;
+	height: 600px;
+
+	/* background-color: rgb(44, 42, 12); */
+
+	/* background: rgb(87, 78, 14); */
+	background: linear-gradient(160deg, rgb(53, 48, 9) 0%, rgb(29, 26, 3) 100%);
+
+	border: 1px solid rgb(71, 50, 24);
+	border-radius: 10px;
+}
+
+.player-board {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	/* background-color: rgb(56, 49, 17); */
+
+	background: rgb(56, 49, 17);
+	background: linear-gradient(
+		160deg,
+		rgba(56, 49, 17, 1) 0%,
+		rgba(18, 16, 1, 1) 100%
+	);
+
+	color: silver;
+
+	width: 450px;
+	height: 95%;
+
+	margin: 15px;
+
+	border-radius: 10px;
+	border: 1px solid rgba(192, 192, 192, 0.5);
+}
+
+.center-board {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* background-color: rgb(71, 62, 20); */
+
+	background: rgb(89, 78, 25);
+	background: linear-gradient(
+		160deg,
+		rgba(89, 78, 25, 1) 0%,
+		rgba(60, 54, 5, 1) 100%
+	);
+	color: silver;
+
+	width: 350px;
+	height: 95%;
+
+	margin: 5px 0px 5px 0px;
+
+	border-radius: 10px;
+	border: 1px solid rgba(192, 192, 192, 0.5);
+}
+.center-lane {
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgb(44, 37, 4) 25%,
+		rgb(44, 37, 4) 75%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
+	/* background-color: rgb(48, 37, 14); */
+	width: 2px;
+	height: 95%;
+}

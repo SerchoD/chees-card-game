@@ -1,0 +1,49 @@
+.card {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 10;
+
+	text-align: center;
+	/* align */
+
+	background: rgb(68, 47, 6);
+	background: linear-gradient(
+		184deg,
+		rgba(68, 47, 6, 1) 0%,
+		rgba(27, 24, 3, 1) 100%
+	);
+
+	border: 1px solid rgb(107, 107, 107);
+	border-radius: 5px;
+
+	width: 46%;
+	height: 46%;
+
+	margin: 5px;
+}
+
+.title {
+	font-size: 1.5rem;
+	background-color: darkorchid;
+	padding: 0px;
+	margin: 5px 0px 0px 0px;
+}
+
+.description {
+	font-size: medium;
+	text-align: start;
+	margin: 5px 10px 5px 10px;
+}
+
+.lane1 {
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgb(56, 47, 15) 25%,
+		rgb(56, 47, 15) 75%,
+		rgba(0, 0, 0, 0) 100%
+	);
+
+	width: 90%;
+	height: 2px;
+}
