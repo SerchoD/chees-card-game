@@ -23,27 +23,84 @@
 }
 
 .title {
-	font-size: 1.5rem;
-	background-color: darkorchid;
-	padding: 0px;
-	margin: 5px 0px 0px 0px;
+	grid-row: 1 / 2;
+
+	color: rgb(218, 218, 218);
+
+	font-size: 1.2rem;
+
+	background-color: rgba(100, 81, 65, 0.226);
+
+	border-bottom: 2px solid rgba(214, 195, 87, 0.452);
+	border-radius: 0px 0px 10px 10px;
+
+	height: fit-content;
+
+	padding: 12px 0px 12px 0px;
+	margin: 0px 0px 0px 0px;
 }
 
 .description {
-	font-size: medium;
+	grid-row: auto;
+
+	overflow: hidden;
+
+	color: darkgray;
+
+	font-size: 0.8rem;
+
 	text-align: start;
+	text-overflow: clip;
+
 	margin: 5px 10px 5px 10px;
 }
 
-.lane1 {
-	background: linear-gradient(
-		90deg,
-		rgba(0, 0, 0, 0) 0%,
-		rgb(56, 47, 15) 25%,
-		rgb(56, 47, 15) 75%,
-		rgba(0, 0, 0, 0) 100%
-	);
+.button {
+	grid-row: 9 / 10;
 
-	width: 90%;
-	height: 2px;
+	/* font-size: 1.2rem; */
+
+	background-color: rgba(48, 87, 90, 0.144);
+
+	border-top: 2px solid rgba(199, 87, 214, 0.274);
+	border-radius: 10px 10px 0px 0px;
+
+	/* height: fit-content; */
+
+	padding: 5px 0px 5px 0px;
+	margin: 0px 0px 0px 0px;
+}
+.btn-delete {
+	background: linear-gradient(45deg, darkslategrey, rgb(22, 49, 49));
+
+	color: darkgray;
+
+	font-size: 0.75rem;
+
+	border: 2px solid rgb(14, 56, 56);
+	border-radius: 2px 15px 2px 15px;
+
+	padding: 2% 5% 2% 5%;
+	margin: 2% 0% 0% 0%;
+}
+
+.btn-delete:hover {
+	background: linear-gradient(45deg, rgb(31, 51, 51), rgb(12, 31, 31));
+
+	color: rgb(138, 138, 138);
+
+	border: 2px solid rgb(10, 39, 39);
+}
+
+.btn-delete:active {
+	background: linear-gradient(45deg, darkslategrey, rgb(22, 49, 49));
+
+	color: darkgray;
+
+	font-size: 0.74rem;
+
+	border: 2px solid rgb(14, 56, 56);
+
+	padding: 1.5% 3.5% 1.5% 3.5%;
+	margin: 2.5% 0% 0.5% 0%;
 }
