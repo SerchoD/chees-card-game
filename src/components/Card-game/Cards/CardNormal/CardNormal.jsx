@@ -1,24 +1,30 @@
 import React from 'react';
-import './card.css';
+import './cardNormal.css';
 
-const Card = ({
+const CardNormal = ({
 	title = 'Titulo',
 	description = 'Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud. Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud',
-	cardClass = ['normal', 'special', 'elit'],
 }) => {
+	const scrollUpCustom = (event) => {
+		event.target.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<div className='card'>
 			<h1 className='title'>{title}</h1>
 
-			<p className='description' title={description}>
+			<p className='description' onMouseLeave={scrollUpCustom} title={description}>
 				{description}
 			</p>
 
-			<div className='button'>
-				<button className='btn-delete'>Descartar</button>
+			<div className='button-container'>
+				<button className='btn-delete'>Discard</button>
 			</div>
 		</div>
 	);
 };
 
-export default Card;
+export default CardNormal;

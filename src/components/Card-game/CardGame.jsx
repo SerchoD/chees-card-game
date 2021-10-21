@@ -1,7 +1,9 @@
 import React from 'react';
 import data from './cards';
 import './cardGame.css';
-import Card from './Card';
+import CardNormal from './Cards/CardNormal/CardNormal';
+import CardSpecial from './Cards/CardSpecial/CardSpecial';
+import CardElite from './Cards/CardElite/CardElite';
 
 const CardGame = () => {
 	const card = data.card;
@@ -15,10 +17,10 @@ const CardGame = () => {
 			</div>
 
 			<div className='rigth-player-board player-board'>
-				<Card />
-				<Card />
-				<Card />
-				<Card />
+				<CardSpecial />
+
+				<CardNormal />
+				<CardElite />
 			</div>
 		</div>
 	);
