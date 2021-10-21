@@ -14,13 +14,15 @@ const CardNormal = ({
 
 	return (
 		<div className='card'>
-			<h1 className='title'>{title}</h1>
+			<div className='title-container'>
+				<h1 className='title'>{title}</h1>
+			</div>
 
-			<p className='description' onMouseLeave={scrollUpCustom} title={description}>
+			<p className='description' onMouseLeave={scrollUpCustom}>
 				{description}
 			</p>
 
-			<div className='button-container'>
+			<div className='btn-container'>
 				<button className='btn-delete'>Discard</button>
 			</div>
 		</div>

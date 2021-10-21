@@ -1,18 +1,24 @@
+:root {
+	--width-95vw: 90vw;
+}
+
 .main-board {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
-	width: 1300px;
-	height: 600px;
-
-	/* background-color: rgb(44, 42, 12); */
-
-	/* background: rgb(87, 78, 14); */
 	background: linear-gradient(160deg, rgb(53, 48, 9) 0%, rgb(29, 26, 3) 100%);
 
+	/* This is for aspect relation of main board */
+	width: var(--width-95vw);
+	height: calc(var(--width-95vw) / 2);
+
 	border: 1px solid rgb(71, 50, 24);
-	border-radius: 10px;
+	border-radius: 1vmax;
+
+	box-shadow: 8px 8px 15px black;
+
+	margin: 1rem;
 }
 
 .player-board {
@@ -21,17 +27,25 @@
 	align-items: center;
 	flex-wrap: wrap;
 
-	background: radial-gradient(rgb(37, 34, 11) 0%, rgb(37, 34, 0) 120%);
+	background: linear-gradient(rgb(37, 34, 11) 0%, rgb(37, 34, 0) 100%);
 
 	color: silver;
 
-	width: 450px;
+	width: 40%;
 	height: 95%;
 
-	margin: 15px;
-
-	border-radius: 10px;
+	border-radius: 1vmax;
 	border: 1px solid rgba(192, 192, 192, 0.212);
+
+	box-shadow: 2px 2px 5px black;
+
+	margin: 0.3rem;
+}
+.rigth-player-board {
+	margin-right: 1.2%;
+}
+.left-player-board {
+	margin-left: 1.2%;
 }
 
 .center-board {
@@ -40,15 +54,18 @@
 	align-items: center;
 
 	background: radial-gradient(rgb(48, 47, 15) 0%, rgb(48, 47, 0) 120%);
+
 	color: silver;
 
-	width: 350px;
+	width: 20%;
 	height: 95%;
 
-	margin: 5px 0px 5px 0px;
-
 	border-radius: 10px;
-	border: 1px solid rgba(192, 192, 192, 0.295);
+	border: 1px solid rgba(192, 192, 192, 0.164);
+
+	box-shadow: 2px 2px 5px black;
+
+	margin: 0.3rem;
 }
 .center-lane {
 	background: linear-gradient(
