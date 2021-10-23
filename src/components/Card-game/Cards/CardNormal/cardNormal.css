@@ -1,15 +1,69 @@
-.card {
+* {
+	/* Avoid all selectable texts. */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.card-normal {
+	/* Modify only R,G or B, to Theme Style */
+	--r: 68;
+	--g: 47;
+	--b: 6;
+	--alpha: 1;
+
+	--main-color: rgba(var(--r), var(--g), var(--b), var(--alpha));
+
+	--second-color: rgba(
+		calc(var(--r) + 10),
+		calc(var(--g) + 10),
+		calc(var(--b) + 10),
+		0.5
+	);
+
+	--innter-borders: rgba(
+		calc(var(--r) + 40),
+		calc(var(--g) + 40),
+		calc(var(--b) + 40),
+		calc(var(--alpha))
+	);
+
+	--main-color-hover: rgba(
+		calc(var(--r) + 5),
+		calc(var(--g) + 5),
+		calc(var(--b) + 5),
+		var(--alpha)
+	);
+
+	--btn-border: rgba(
+		calc(var(--r) + 20),
+		calc(var(--g) + 20),
+		calc(var(--b) + 20),
+		var(--alpha)
+	);
+	--btn-border-hover: rgba(
+		calc(var(--r) + 50),
+		calc(var(--g) + 50),
+		calc(var(--b) + 50),
+		var(--alpha)
+	);
+}
+
+.card-normal {
 	display: grid;
 	grid-template:
-		'title-container' 15%
+		'title-container' max-content
 		'description' auto
-		'btn-container' 15%;
+		'btn-container' 18%;
 
 	text-align: center;
 
 	background: linear-gradient(
 		184deg,
-		rgba(68, 47, 6, 1) 0%,
+		var(--main-color) 0%,
 		rgba(27, 24, 3, 1) 100%
 	);
 
@@ -23,17 +77,23 @@
 
 	margin: 1%;
 
-	transition: 1s ease;
+	transition: 2s ease;
 }
 
-.card:hover {
+.card-normal:hover {
 	border: 0.1vw solid rgb(231, 184, 97);
+
+	background: linear-gradient(
+		184deg,
+		var(--main-color-hover) 0%,
+		rgba(27, 24, 3, 1) 100%
+	);
 }
-.card:hover .title {
-	font-size: 1.6vw;
+
+.card-normal:hover .title {
 	color: white;
 }
-.card:hover .description {
+.card-normal:hover .description {
 	color: rgb(233, 233, 233);
 }
 
@@ -44,45 +104,75 @@
 	align-items: center;
 	justify-content: center;
 
-	background-color: rgba(100, 81, 65, 0.226);
+	background-color: var(--second-color);
 
-	border-bottom: 0.2vw solid rgba(199, 121, 5, 0.322);
-	border-radius: 0vw 0vw 1vw 1vw;
+	border-bottom: 0.2vw solid var(--innter-borders);
+	border-radius: 0.6vw 0.6vw 1vw 1vw;
 
 	box-shadow: 0vw 0.4vw 0.3vw rgba(0, 0, 0, 0.384);
 
+	padding: 0.3vw 0vw 0.2vw 0vw;
 	margin: 0px;
 }
 .title {
-	color: blanchedalmond;
+	color: rgb(185, 185, 185);
 
-	font-size: 1.5vw;
+	font-size: 1.3vw;
 
-	text-shadow: 0.3vw 0.3vw 0.3vw rgba(0, 0, 0, 0.521);
+	text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.486);
 
-	transition: 3s ease;
+	margin: 0.3vw;
+
+	transition: 1s ease;
 }
 
-.description {
+.description-container {
 	grid-area: description;
 
 	overflow: hidden;
 
-	color: darkgray;
+	text-shadow: 0.3vw 0.3vw 0.6vw rgb(0, 0, 0);
 
-	font-size: 1.1vw;
+	margin: 0.3vw 0vw 0vw 0vw;
 
-	text-shadow: 0.5vw 0.5vw 0.3vw rgba(0, 0, 0, 0.521);
-
-	text-align: start;
-
-	margin: 0.7vw 0.5vw 0.1vw 0.7vw;
-
-	transition: 2s ease;
+	transition: 0.5s ease;
 }
-.description:hover {
+.description-container:hover {
 	overflow: scroll;
 	scrollbar-width: none;
+
+	cursor: default;
+}
+.description-text {
+	overflow: hidden;
+
+	color: rgb(185, 185, 185);
+
+	font-size: 1.03vw;
+	text-align: start;
+	word-spacing: 0.13vw;
+
+	line-height: 1.12vw;
+
+	margin: 0.5vw 1vw 0vw 1vw;
+}
+.card-divisor {
+	background: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0),
+		var(--innter-borders),
+		rgba(0, 0, 0, 0)
+	);
+
+	margin: auto;
+	margin-top: 0.4vw;
+	margin-bottom: 0.4vw;
+
+	height: 0.1vw;
+	width: 75%;
+}
+p {
+	padding: 0.01vw;
 }
 
 .btn-container {
@@ -93,15 +183,15 @@
 	justify-content: center;
 	align-items: center;
 
-	background-color: rgba(89, 90, 48, 0.144);
+	background-color: rgba(0, 0, 0, 0.062);
 
-	border-top: 0.2vw solid rgba(199, 121, 5, 0.322);
+	border-top: 0.2vw solid var(--innter-borders);
 	border-radius: 1vw 1vw 0vw 0vw;
 
 	box-shadow: 0vw -0.4vw 0.3vw rgba(0, 0, 0, 0.384);
 
 	padding: 0px;
-	margin: 0px;
+	margin-top: 0.3vw;
 }
 
 .btn-delete {
@@ -109,17 +199,17 @@
 	justify-content: center;
 	align-content: center;
 
-	background: rgba(80, 56, 25, 0.877);
+	background: var(--main-color);
 
 	color: whitesmoke;
 
 	font-size: 1vw;
 
-	border: 0.2vw solid rgb(56, 50, 14);
+	border: 0.2vw solid var(--btn-border);
 	border-radius: 0.1vw 1.3vw 0.1vw 1.3vw;
 
-	width: 6em;
-	height: 2em;
+	width: 6vw;
+	height: 2vw;
 
 	box-shadow: 0.2vw 0.2vw 0.3vw rgba(0, 0, 0, 0.774);
 
@@ -128,21 +218,21 @@
 }
 
 .btn-delete:hover {
-	background: rgba(80, 56, 25, 0.877);
+	background: var(--main-color-hover);
 
 	color: whitesmoke;
 
-	border: 0.2vw solid rgb(77, 77, 17);
-	transition: 0.5s ease;
+	border: 0.2vw solid var(--btn-border-hover);
+	transition: 0.3s ease;
 }
 
 .btn-delete:active {
-	background: rgba(80, 56, 25, 0.877);
+	background: var(--main-color);
 
-	color: rgb(138, 138, 138);
+	color: rgb(216, 216, 216);
 
 	box-shadow: 0.2vw 0.2vw 0.3vw rgba(0, 0, 0, 0.349);
 
-	border: 0.2vw solid rgb(56, 50, 14);
-	transition: 0.5s ease;
+	border: 0.2vw solid var(--btn-border);
+	transition: 0.1s ease;
 }

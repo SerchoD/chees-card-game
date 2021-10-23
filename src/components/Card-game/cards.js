@@ -7,8 +7,12 @@ const data = {
 		},
 		{
 			id: 1,
-			title: 'Titulo 1',
-			description: 'Descripción 1',
+			title: 'Pawn Forward Capture',
+			description: [
+				'A Pawn can capture a piece in front of it.',
+				'space',
+				"- Can't be used to 'Chek or Mate' the King.",
+			],
 		},
 		{
 			id: 2,

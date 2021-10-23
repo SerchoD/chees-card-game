@@ -2,25 +2,45 @@ import React from 'react';
 import './cardNormal.css';
 
 const CardNormal = ({
-	title = 'Titulo',
-	description = 'Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud. Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud',
+	title = 'Card Title',
+	description = 'Esto aca; -Esto otro aca. -Esto así.',
 }) => {
-	const scrollUpCustom = (event) => {
+	// Make description move to start position when Mouse Leaves.
+	const unScrollDescription = (event) => {
+		console.log('mouseLeave');
+
 		event.target.scrollTo({
 			top: 0,
 			behavior: 'smooth',
 		});
 	};
 
+	// ---- ------ -- - SOLUCIONAR EL SCROLL  -- - -- -- -- ---  - -
 	return (
-		<div className='card'>
+		<div className='card-normal'>
 			<div className='title-container'>
 				<h1 className='title'>{title}</h1>
 			</div>
 
-			<p className='description' onMouseLeave={scrollUpCustom}>
-				{description}
-			</p>
+			<div className='description-container' onMouseLeave={unScrollDescription}>
+				{description.map((lane, i) => {
+					if (i === 0) {
+						return (
+							<p style={{ textIndent: '1vw' }} key={i} className='description-text'>
+								{lane}
+							</p>
+						);
+					} else if (lane === 'space') {
+						return <div className='card-divisor'></div>;
+					} else {
+						return (
+							<p key={i} className='description-text'>
+								{lane}
+							</p>
+						);
+					}
+				})}
+			</div>
 
 			<div className='btn-container'>
 				<button className='btn-delete'>Discard</button>

@@ -17,10 +17,10 @@ const CardGame = () => {
 			</div>
 
 			<div className='rigth-player-board player-board'>
-				<CardNormal />
-				<CardNormal />
-				<CardNormal />
-				<CardNormal />
+				<CardNormal title={card[1].title} description={card[1].description} />
+				<CardNormal title={card[1].title} description={card[1].description} />
+				<CardNormal title={card[1].title} description={card[1].description} />
+				<CardNormal title={card[1].title} description={card[1].description} />
 			</div>
 		</div>
 	);
