@@ -4,6 +4,7 @@ import './cardGame.css';
 import CardNormal from './Cards/CardNormal/CardNormal';
 import CardSpecial from './Cards/CardSpecial/CardSpecial';
 import CardElite from './Cards/CardElite/CardElite';
+import CardEmpty from './Cards/CardEmpty/CardEmpty';
 
 const CardGame = () => {
 	const card = data.card;
@@ -19,7 +20,7 @@ const CardGame = () => {
 			<div className='rigth-player-board player-board'>
 				<CardNormal title={card[1].title} description={card[1].description} />
 				<CardElite title={card[1].title} description={card[1].description} />
-				<CardSpecial title={card[1].title} description={card[1].description} />
+				<CardEmpty />
 				<CardSpecial title={card[1].title} description={card[1].description} />
 			</div>
 		</div>

@@ -1,0 +1,16 @@
+.card-empty {
+	display: grid;
+	grid-template:
+		'title-container' max-content
+		'description' auto
+		'btn-container' 18%;
+
+	border: 0.1vw solid rgba(105, 93, 70, 0);
+
+	background-color: rgba(0, 0, 0, 0);
+
+	width: 45%;
+	height: 45%;
+
+	margin: 1%;
+}
