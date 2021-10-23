@@ -3,7 +3,7 @@ import './cardNormal.css';
 
 const CardNormal = ({
 	title = 'Card Title',
-	description = 'Esto aca; -Esto otro aca. -Esto así.',
+	description = 'Card Description.',
 }) => {
 	// Make description move to start position when Mouse Leaves.
 	const unScrollDescription = (event) => {
@@ -15,7 +15,6 @@ const CardNormal = ({
 		});
 	};
 
-	// ---- ------ -- - SOLUCIONAR EL SCROLL  -- - -- -- -- ---  - -
 	return (
 		<div className='card-normal'>
 			<div className='title-container'>

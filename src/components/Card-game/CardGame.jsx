@@ -18,9 +18,9 @@ const CardGame = () => {
 
 			<div className='rigth-player-board player-board'>
 				<CardNormal title={card[1].title} description={card[1].description} />
-				<CardNormal title={card[1].title} description={card[1].description} />
-				<CardNormal title={card[1].title} description={card[1].description} />
-				<CardNormal title={card[1].title} description={card[1].description} />
+				<CardElite title={card[1].title} description={card[1].description} />
+				<CardSpecial title={card[1].title} description={card[1].description} />
+				<CardSpecial title={card[1].title} description={card[1].description} />
 			</div>
 		</div>
 	);

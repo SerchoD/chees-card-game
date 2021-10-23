@@ -1,5 +1,5 @@
 :root {
-	--width-95vw: 90vw;
+	--width-90vw: 90vw;
 }
 
 .main-board {
@@ -10,8 +10,8 @@
 	background: linear-gradient(160deg, rgb(53, 48, 9) 0%, rgb(29, 26, 3) 100%);
 
 	/* This is for aspect relation of main board */
-	width: var(--width-95vw);
-	height: calc(var(--width-95vw) / 2);
+	width: var(--width-90vw);
+	height: calc(var(--width-90vw) / 2);
 
 	border: 1px solid rgb(71, 50, 24);
 	border-radius: 1vmax;
@@ -37,7 +37,7 @@
 	border-radius: 1vmax;
 	border: 1px solid rgba(192, 192, 192, 0.212);
 
-	box-shadow: 2px 2px 5px black;
+	box-shadow: 0.2vw 0.2vw 0.5vw black;
 
 	margin: 0.3rem;
 }
@@ -59,11 +59,10 @@
 
 	width: 20%;
 	height: 95%;
-
-	border-radius: 10px;
+	border-radius: 1vmax;
 	border: 1px solid rgba(192, 192, 192, 0.164);
 
-	box-shadow: 2px 2px 5px black;
+	box-shadow: 0.2vw 0.2vw 0.5vw black;
 
 	margin: 0.3rem;
 }

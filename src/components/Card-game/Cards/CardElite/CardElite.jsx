@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './cardElite.css';
 
 const CardElite = ({
-	title = 'Titulo',
-	description = 'Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud. Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud',
+	title = 'Card Title',
+	description = 'Card Description.',
 }) => {
-	const scrollUpCustom = (event) => {
+	// Make description move to start position when Mouse Leaves.
+	const unScrollDescription = (event) => {
+		console.log('mouseLeave');
+
 		event.target.scrollTo({
 			top: 0,
 			behavior: 'smooth',
@@ -13,19 +16,33 @@ const CardElite = ({
 	};
 
 	return (
-		<div className='cardElite'>
-			<h1 className='titleElite'>{title}</h1>
+		<div className='card-elite'>
+			<div className='title-container-elite'>
+				<h1 className='title-elite'>{title}</h1>
+			</div>
 
-			<p
-				className='descriptionElite'
-				onMouseLeave={scrollUpCustom}
-				title={description}
-			>
-				{description}
-			</p>
+			<div className='description-container-elite' onMouseLeave={unScrollDescription}>
+				{description.map((lane, i) => {
+					if (i === 0) {
+						return (
+							<p style={{ textIndent: '1vw' }} key={i} className='description-text-elite'>
+								{lane}
+							</p>
+						);
+					} else if (lane === 'space') {
+						return <div className='card-divisorp-elite'></div>;
+					} else {
+						return (
+							<p key={i} className='description-text-elite'>
+								{lane}
+							</p>
+						);
+					}
+				})}
+			</div>
 
-			<div className='button-containerElite'>
-				<button className='btn-deleteElite'>Discard</button>
+			<div className='btn-container-elite'>
+				<button className='btn-delete-elite'>Discard</button>
 			</div>
 		</div>
 	);

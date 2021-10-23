@@ -2,10 +2,13 @@ import React from 'react';
 import './cardSpecial.css';
 
 const CardSpecial = ({
-	title = 'Titulo',
-	description = 'Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud. Este es el lugar donde debería estar la descripción si la hubiera, pero como no la hay, en su lugar hay un texto de prueba que representa una potencial descripción de extensa longitud',
+	title = 'Card Title',
+	description = 'Card Description.',
 }) => {
-	const scrollUpCustom = (event) => {
+	// Make description move to start position when Mouse Leaves.
+	const unScrollDescription = (event) => {
+		console.log('mouseLeave');
+
 		event.target.scrollTo({
 			top: 0,
 			behavior: 'smooth',
@@ -13,19 +16,36 @@ const CardSpecial = ({
 	};
 
 	return (
-		<div className='cardSpecial'>
-			<h1 className='titleSpecial'>{title}</h1>
+		<div className='card-special'>
+			<div className='title-container-special'>
+				<h1 className='title-special'>{title}</h1>
+			</div>
 
-			<p
-				className='descriptionSpecial'
-				onMouseLeave={scrollUpCustom}
-				title={description}
+			<div
+				className='description-container-special'
+				onMouseLeave={unScrollDescription}
 			>
-				{description}
-			</p>
+				{description.map((lane, i) => {
+					if (i === 0) {
+						return (
+							<p style={{ textIndent: '1vw' }} key={i} className='description-text-special'>
+								{lane}
+							</p>
+						);
+					} else if (lane === 'space') {
+						return <div className='card-divisor-special'></div>;
+					} else {
+						return (
+							<p key={i} className='description-text-special'>
+								{lane}
+							</p>
+						);
+					}
+				})}
+			</div>
 
-			<div className='button-containerSpecial'>
-				<button className='btn-deleteSpecial'>Discard</button>
+			<div className='btn-container-special'>
+				<button className='btn-delete-special'>Discard</button>
 			</div>
 		</div>
 	);
