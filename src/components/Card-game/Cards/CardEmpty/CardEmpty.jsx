@@ -1,8 +1,8 @@
 import React from 'react';
 import './cardEmpty.css';
 
-const CardNormal = ({}) => {
+const CardEmpty = () => {
 	return <div className='card-empty'></div>;
 };
 
-export default CardNormal;
+export default CardEmpty;

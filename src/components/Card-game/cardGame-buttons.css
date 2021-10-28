@@ -1,0 +1,76 @@
+.center-board {
+	--center-btn-text-color: rgba(255, 255, 255, 0.7);
+}
+.btn-options {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
+	width: 45%;
+	height: 100%;
+
+	/* background-color: rgba(144, 238, 144, 0.068); */
+}
+
+.btn {
+	color: aliceblue;
+
+	font-size: 1.2vw;
+	font-weight: 600;
+
+	/* padding: 1vw 0.1vw 1vw 0.1vw; */
+
+	margin: 2vw 0vw 2vw 0vw;
+}
+
+/* -------Btn Normal ------- */
+.btn-normal {
+	color: var(--center-btn-text-color);
+
+	background-color: rgb(68, 47, 6);
+	border: 0.2vw solid rgb(78, 57, 16);
+	border-radius: 0.8vw;
+}
+.btn-normal:hover {
+	background-color: rgb(72, 52, 8);
+	border: 0.2vw solid rgb(78, 57, 16);
+}
+.btn-normal:active {
+	background-color: rgb(68, 47, 6);
+	border: 0.2vw solid rgb(78, 57, 16);
+}
+
+/* -------Btn Special ------- */
+.btn-special {
+	color: var(--center-btn-text-color);
+
+	background-color: rgb(20, 60, 20);
+	border: 0.2vw solid rgb(30, 70, 30);
+	border-radius: 0.3vw;
+}
+.btn-special:hover {
+	background-color: rgb(25, 65, 25);
+	border: 0.2vw solid rgb(30, 70, 30);
+}
+.btn-special:active {
+	background-color: rgb(20, 60, 20);
+	border: 0.2vw solid rgb(30, 70, 30);
+}
+
+/* -------Btn Elite ------- */
+.btn-elite {
+	color: var(--center-btn-text-color);
+
+	background-color: rgb(10, 60, 80);
+	border: 0.2vw solid rgb(20, 70, 90);
+	border-radius: 0.1vw 1vw 0.1vw 1vw;
+}
+.btn-elite:hover {
+	background-color: rgb(16, 66, 86);
+	border: 0.2vw solid rgb(20, 70, 90);
+}
+.btn-elite:active {
+	background-color: rgb(10, 60, 80);
+	border: 0.2vw solid rgb(20, 70, 90);
+}

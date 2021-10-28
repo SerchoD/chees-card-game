@@ -4,11 +4,11 @@ import './cardNormal.css';
 const CardNormal = ({
 	title = 'Card Title',
 	description = 'Card Description.',
+	discardButton,
+	id,
 }) => {
 	// Make description move to start position when Mouse Leaves.
 	const unScrollDescription = (event) => {
-		console.log('mouseLeave');
-
 		event.target.scrollTo({
 			top: 0,
 			behavior: 'smooth',
@@ -22,19 +22,19 @@ const CardNormal = ({
 			</div>
 
 			<div className='description-container' onMouseLeave={unScrollDescription}>
-				{description.map((lane, i) => {
+				{description.map((textLine, i) => {
 					if (i === 0) {
 						return (
 							<p style={{ textIndent: '1vw' }} key={i} className='description-text'>
-								{lane}
+								{textLine}
 							</p>
 						);
-					} else if (lane === 'space') {
-						return <div className='card-divisor'></div>;
+					} else if (textLine === 'space') {
+						return <div key={i} className='card-divisor'></div>;
 					} else {
 						return (
 							<p key={i} className='description-text'>
-								{lane}
+								{textLine}
 							</p>
 						);
 					}
@@ -42,7 +42,14 @@ const CardNormal = ({
 			</div>
 
 			<div className='btn-container'>
-				<button className='btn-delete'>Discard</button>
+				<button
+					className='btn-delete'
+					onClick={() => {
+						discardButton(id);
+					}}
+				>
+					Discard
+				</button>
 			</div>
 		</div>
 	);

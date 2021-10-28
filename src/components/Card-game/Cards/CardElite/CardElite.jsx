@@ -7,8 +7,6 @@ const CardElite = ({
 }) => {
 	// Make description move to start position when Mouse Leaves.
 	const unScrollDescription = (event) => {
-		console.log('mouseLeave');
-
 		event.target.scrollTo({
 			top: 0,
 			behavior: 'smooth',
@@ -30,7 +28,7 @@ const CardElite = ({
 							</p>
 						);
 					} else if (lane === 'space') {
-						return <div className='card-divisorp-elite'></div>;
+						return <div key={i} className='card-divisor-elite'></div>;
 					} else {
 						return (
 							<p key={i} className='description-text-elite'>
