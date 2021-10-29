@@ -37,7 +37,6 @@ const CardGame = () => {
 				{
 					title: normalCard[i].title,
 					description: normalCard[i].description,
-					discardButton: () => console.log(rigthPlayer),
 					id: CardId,
 					key: randomKey
 				}
@@ -148,8 +147,8 @@ const CardGame = () => {
 			</div>
 
 			<div className='rigth-player-board player-board'>{rigthPlayer.map( r => {
-				return r ? <CardNormal {...r}/> : <CardEmpty key={v4()} />
-				// return r ? <CardNormal {...r} discardButton={() => discard(r.id)}/> : <CardEmpty key={v4()} />
+				// return r ? <CardNormal {...r}/> : <CardEmpty key={v4()} />
+				return r ? <CardNormal {...r} discardButton={() => discard(r.id)}/> : <CardEmpty key={v4()} />
 			})}</div>
 		</div>
 	);
