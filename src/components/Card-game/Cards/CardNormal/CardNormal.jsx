@@ -15,6 +15,11 @@ const CardNormal = ({
 		});
 	};
 
+
+	const onDelete = () => {
+		discardButton(id);
+	}
+
 	return (
 		<div className='card-normal'>
 			<div className='title-container'>
@@ -44,9 +49,7 @@ const CardNormal = ({
 			<div className='btn-container'>
 				<button
 					className='btn-delete'
-					onClick={() => {
-						discardButton(id);
-					}}
+					onClick={onDelete}
 				>
 					Discard
 				</button>
