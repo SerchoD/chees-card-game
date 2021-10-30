@@ -18,6 +18,10 @@ const CardGame = () => {
 	const [rigthPlayer, setRigthPlayer] = useState([null, null, null, null]);
 	const rigthSlots = useRef([false, false, false, false]);
 
+	const [leftPlayer, setLeftPlayer] = useState([null, null, null, null]);
+	const leftSlots = useRef([false, false, false, false]);
+
+	//  Generate de New Card to be added.
 	const newCard = (cardType) => {
 		if (cardType === 'normal') {
 			const max = normalCard.length - 1;
@@ -55,6 +59,7 @@ const CardGame = () => {
 		}
 	};
 
+	// Set a new card for de Rigth Player.
 	const rigthPlayerNewCard = (cardType) => {
 		let flag = false;
 		let index = 0;
@@ -71,8 +76,26 @@ const CardGame = () => {
 		}
 		setRigthPlayer(auxCards);
 	};
+	// Set a new card for de Left Player.
+	const LeftPlayerNewCard = (cardType) => {
+		let flag = false;
+		let index = 0;
+		const auxCards = [...leftPlayer];
 
-	const discard = (id) => {
+		while (index <= 3 && !flag) {
+			if (!leftSlots.current[index]) {
+				flag = true;
+				leftSlots.current[index] = true;
+
+				auxCards[index] = newCard(cardType);
+			}
+			index++;
+		}
+		setLeftPlayer(auxCards);
+	};
+
+	// Rigth Player Discard Function.
+	const discardRigthPlayer = (id) => {
 		const auxRightPlayer = [...rigthPlayer];
 
 		const index = auxRightPlayer?.indexOf(
@@ -84,28 +107,52 @@ const CardGame = () => {
 		setRigthPlayer(auxRightPlayer);
 	};
 
+	// Left Player Discard Function.
+	const discardLeftPlayer = (id) => {
+		const auxLeftPlayer = [...leftPlayer];
+
+		const index = auxLeftPlayer?.indexOf(auxLeftPlayer?.find((p) => p?.id === id));
+
+		auxLeftPlayer.splice(index, 1, null);
+		leftSlots.current[index] = false;
+		setLeftPlayer(auxLeftPlayer);
+	};
+
 	return (
 		<div className='main-board'>
-			{/* <div className='left-player-board player-board'>{leftPlayer}</div> */}
+			<div className='left-player-board player-board'>
+				{leftPlayer.map((card) => {
+					if (card?.cardType === 'normal') {
+						return (
+							<CardNormal {...card} discardButton={() => discardLeftPlayer(card.id)} />
+						);
+					} else if (card?.cardType === 'special') {
+						return (
+							<CardSpecial {...card} discardButton={() => discardLeftPlayer(card.id)} />
+						);
+					} else if (card?.cardType === 'elite') {
+						return <CardElite {...card} discardButton={() => discardLeftPlayer(card.id)} />;
+					} else if (card === null) {
+						return <CardEmpty key={randomHexadecimal()} />;
+					}
+				})}
+			</div>
 
 			<div className='center-board'>
-				{/* <div className='btn-options left-player-options'>
-					<button
-						className='btn btn-normal'
-						onClick={() => leftPlayerNormalCard('normal')}
-					>
+				<div className='btn-options left-player-options'>
+					<button className='btn btn-normal' onClick={() => LeftPlayerNewCard('normal')}>
 						Normal Card
 					</button>
 					<button
 						className='btn btn-special'
-						onClick={() => leftPlayerNormalCard('special')}
+						onClick={() => LeftPlayerNewCard('special')}
 					>
 						Special Card
 					</button>
-					<button className='btn btn-elite' onClick={() => leftPlayerNormalCard('elite')}>
+					<button className='btn btn-elite' onClick={() => LeftPlayerNewCard('elite')}>
 						Elite Card
 					</button>
-				</div> */}
+				</div>
 
 				<span className='center-lane'></span>
 
@@ -128,11 +175,17 @@ const CardGame = () => {
 			<div className='rigth-player-board player-board'>
 				{rigthPlayer.map((card) => {
 					if (card?.cardType === 'normal') {
-						return <CardNormal {...card} discardButton={() => discard(card.id)} />;
+						return (
+							<CardNormal {...card} discardButton={() => discardRigthPlayer(card.id)} />
+						);
 					} else if (card?.cardType === 'special') {
-						return <CardSpecial {...card} discardButton={() => discard(card.id)} />;
+						return (
+							<CardSpecial {...card} discardButton={() => discardRigthPlayer(card.id)} />
+						);
 					} else if (card?.cardType === 'elite') {
-						return <CardElite {...card} discardButton={() => discard(card.id)} />;
+						return (
+							<CardElite {...card} discardButton={() => discardRigthPlayer(card.id)} />
+						);
 					} else if (card === null) {
 						return <CardEmpty key={randomHexadecimal()} />;
 					}
