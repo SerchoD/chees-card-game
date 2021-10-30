@@ -4,6 +4,8 @@ import './cardSpecial.css';
 const CardSpecial = ({
 	title = 'Card Title',
 	description = 'Card Description.',
+	discardButton,
+	id,
 }) => {
 	// Make description move to start position when Mouse Leaves.
 	const unScrollDescription = (event) => {
@@ -11,6 +13,10 @@ const CardSpecial = ({
 			top: 0,
 			behavior: 'smooth',
 		});
+	};
+
+	const onDelete = () => {
+		discardButton(id);
 	};
 
 	return (
@@ -43,7 +49,9 @@ const CardSpecial = ({
 			</div>
 
 			<div className='btn-container-special'>
-				<button className='btn-delete-special'>Discard</button>
+				<button className='btn-delete-special' onClick={onDelete}>
+					Discard
+				</button>
 			</div>
 		</div>
 	);

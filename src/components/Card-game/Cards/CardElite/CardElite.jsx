@@ -4,6 +4,8 @@ import './cardElite.css';
 const CardElite = ({
 	title = 'Card Title',
 	description = 'Card Description.',
+	discardButton,
+	id,
 }) => {
 	// Make description move to start position when Mouse Leaves.
 	const unScrollDescription = (event) => {
@@ -11,6 +13,10 @@ const CardElite = ({
 			top: 0,
 			behavior: 'smooth',
 		});
+	};
+
+	const onDelete = () => {
+		discardButton(id);
 	};
 
 	return (
@@ -40,7 +46,9 @@ const CardElite = ({
 			</div>
 
 			<div className='btn-container-elite'>
-				<button className='btn-delete-elite'>Discard</button>
+				<button className='btn-delete-elite' onClick={onDelete}>
+					Discard
+				</button>
 			</div>
 		</div>
 	);
