@@ -103,7 +103,7 @@ const PlayerBoard = ({ player }) => {
 		}
 	};
 	// Fixes de border of this box, depending if Right or Left player.
-	const btnPickUpBorderFix = (player) => {
+	const btnPickUpStyleFix = (player) => {
 		if (player === 'left') {
 			const left = '0vw 1vw 1vw 0vw';
 			return left;
@@ -112,7 +112,7 @@ const PlayerBoard = ({ player }) => {
 			return right;
 		}
 	};
-	const cardsBoardBorderFix = (player) => {
+	const cardsBoardStyleFix = (player) => {
 		if (player === 'left') {
 			const left = '1vw 0vw 0vw 1vw';
 			return left;
@@ -121,11 +121,25 @@ const PlayerBoard = ({ player }) => {
 			return right;
 		}
 	};
+
+	const pointsCounterStyleFix = (player) => {
+		if (player === 'left') {
+			return {
+				'border-left': '1px solid rgba(192, 192, 192, 0.212)',
+				'border-radius': '1vw 0vw 1vw 0vw',
+			};
+		} else if (player === 'right') {
+			return {
+				'border-right': ' 1px solid rgba(192, 192, 192, 0.212)',
+				'border-radius': '0vw 1vw 0vw 1vw',
+			};
+		}
+	};
 	return (
 		<div className='player-board' style={{ flexDirection: leftOrRight(player) }}>
 			<div
 				className='cards-board'
-				style={{ borderRadius: cardsBoardBorderFix(player) }}
+				style={{ borderRadius: cardsBoardStyleFix(player) }}
 			>
 				{playerCards.map((card) => {
 					if (card?.cardType === 'normal') {
@@ -147,7 +161,7 @@ const PlayerBoard = ({ player }) => {
 			<div className='side-bar'>
 				<div
 					className='btn-pick-up'
-					style={{ borderRadius: btnPickUpBorderFix(player) }}
+					style={{ borderRadius: btnPickUpStyleFix(player) }}
 				>
 					<button className='btn btn-normal' onClick={() => playerNewCard('normal')}>
 						Normal Card
@@ -158,6 +172,9 @@ const PlayerBoard = ({ player }) => {
 					<button className='btn btn-elite' onClick={() => playerNewCard('elite')}>
 						Elite Card
 					</button>
+				</div>
+				<div className='points-counter' style={pointsCounterStyleFix(player)}>
+					Acá van a ir los botones de las piezas capturadas y el contador de puntos...
 				</div>
 			</div>
 		</div>
