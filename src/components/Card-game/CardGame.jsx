@@ -1,14 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import dataNormal from './normalCardsData';
 import dataSpecial from './specialCardsData';
 import dataElite from './eliteCardsData';
 import { randomMinMax, randomHexadecimal } from '.././../functions/functions';
 import './cardGame.css';
 import './cardGame-buttons.css';
-import CardNormal from './Cards/CardNormal/CardNormal';
-import CardSpecial from './Cards/CardSpecial/CardSpecial';
-import CardElite from './Cards/CardElite/CardElite';
-import CardEmpty from './Cards/CardEmpty/CardEmpty';
+import CardNormal from './PlayerBoard/Cards/CardNormal/CardNormal';
+import CardSpecial from './PlayerBoard/Cards/CardSpecial/CardSpecial';
+import CardElite from './PlayerBoard/Cards/CardElite/CardElite';
+import CardEmpty from './PlayerBoard/Cards/CardEmpty/CardEmpty';
+import PlayerBoard from './PlayerBoard/PlayerBoard';
 
 const CardGame = () => {
 	const normalCard = dataNormal.normalCard;
@@ -76,6 +77,7 @@ const CardGame = () => {
 		}
 		setRigthPlayer(auxCards);
 	};
+
 	// Set a new card for de Left Player.
 	const LeftPlayerNewCard = (cardType) => {
 		let flag = false;
@@ -120,7 +122,9 @@ const CardGame = () => {
 
 	return (
 		<div className='main-board'>
-			<div className='left-player-board player-board'>
+			<PlayerBoard player='left' />
+			<PlayerBoard player='right' />
+			{/* <div className='left-player-board player-board'>
 				{leftPlayer.map((card) => {
 					if (card?.cardType === 'normal') {
 						return (
@@ -190,7 +194,7 @@ const CardGame = () => {
 						return <CardEmpty key={randomHexadecimal()} />;
 					}
 				})}
-			</div>
+			</div> */}
 		</div>
 	);
 };

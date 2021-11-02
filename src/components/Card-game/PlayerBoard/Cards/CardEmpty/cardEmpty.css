@@ -5,9 +5,11 @@
 		'description' auto
 		'btn-container' 18%;
 
-	border: 0.1vw solid rgba(105, 93, 70, 0.267);
+	border: 0.1vw solid rgba(0, 0, 0, 0.363);
 
-	background-color: rgba(0, 0, 0, 0);
+	background: radial-gradient(#2c220318, #00000010);
+	filter: blur(3px);
+	border-radius: 1vw;
 
 	width: 45%;
 	height: 45%;

@@ -1,15 +1,11 @@
-:root {
-	--width-90vw: 90vw;
-}
-
 .main-board {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 
 	background: linear-gradient(160deg, rgb(53, 48, 9) 0%, rgb(29, 26, 3) 100%);
 
-	/* This is for aspect relation of main board */
+	/* This is for aspect relation of main board, to keep proportion. */
 	width: var(--width-90vw);
 	height: calc(var(--width-90vw) / 2);
 
@@ -18,64 +14,5 @@
 
 	box-shadow: 8px 8px 15px black;
 
-	margin: 1rem;
-}
-
-.player-board {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-
-	background: linear-gradient(rgb(37, 34, 11) 0%, rgb(37, 34, 0) 100%);
-
-	color: silver;
-
-	width: 40%;
-	height: 95%;
-
-	border-radius: 1vmax;
-	border: 1px solid rgba(192, 192, 192, 0.212);
-
-	box-shadow: 0.2vw 0.2vw 0.5vw black;
-
-	margin: 0.3rem;
-}
-.rigth-player-board {
-	margin-right: 1.2%;
-}
-.left-player-board {
-	margin-left: 1.2%;
-}
-
-.center-board {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-
-	background: radial-gradient(rgb(48, 47, 15) 0%, rgb(48, 47, 0) 120%);
-
-	color: silver;
-
-	width: 20%;
-	height: 95%;
-	border-radius: 1vmax;
-	border: 1px solid rgba(192, 192, 192, 0.164);
-
-	box-shadow: 0.2vw 0.2vw 0.5vw black;
-
-	margin: 0.3rem;
-}
-.center-lane {
-	background: linear-gradient(
-		0deg,
-		rgba(0, 0, 0, 0) 0%,
-		rgb(44, 37, 4) 25%,
-		rgb(44, 37, 4) 75%,
-		rgba(0, 0, 0, 0) 100%
-	);
-
-	/* background-color: rgb(48, 37, 14); */
-	width: 2px;
-	height: 95%;
+	margin: 0.5vw;
 }

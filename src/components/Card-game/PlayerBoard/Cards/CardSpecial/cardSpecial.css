@@ -8,11 +8,11 @@
 	user-select: none;
 }
 
-.card-normal {
+.card-special {
 	/* Modify only R,G or B, to Theme Style */
-	--r: 68;
-	--g: 47;
-	--b: 6;
+	--r: 20;
+	--g: 60;
+	--b: 20;
 	--alpha: 1;
 
 	--main-color: rgba(var(--r), var(--g), var(--b), var(--alpha));
@@ -22,6 +22,18 @@
 		calc(var(--g) + 10),
 		calc(var(--b) + 10),
 		0.5
+	);
+	--main-border: rgba(
+		calc(var(--r) + 40),
+		calc(var(--g) + 40),
+		calc(var(--b) + 40),
+		calc(var(--alpha))
+	);
+	--main-border-hover: rgba(
+		calc(var(--r) + 60),
+		calc(var(--g) + 180),
+		calc(var(--b) + 60),
+		calc(var(--alpha))
 	);
 
 	--innter-borders: rgba(
@@ -52,7 +64,7 @@
 	);
 }
 
-.card-normal {
+.card-special {
 	display: grid;
 	grid-template:
 		'title-container' max-content
@@ -67,8 +79,8 @@
 		rgba(27, 24, 3, 1) 100%
 	);
 
-	border: 0.1vw solid rgb(105, 93, 70);
-	border-radius: 0.8vw;
+	border: 0.1vw solid var(--main-border);
+	border-radius: 0.3vw;
 
 	width: 45%;
 	height: 45%;
@@ -80,8 +92,8 @@
 	transition: 2s ease;
 }
 
-.card-normal:hover {
-	border: 0.1vw solid rgb(231, 184, 97);
+.card-special:hover {
+	border: 0.1vw solid var(--main-border-hover);
 
 	background: linear-gradient(
 		184deg,
@@ -90,14 +102,14 @@
 	);
 }
 
-.card-normal:hover .title {
+.card-special:hover .title-special {
 	color: white;
 }
-.card-normal:hover .description {
+.card-special:hover .description-special {
 	color: rgb(233, 233, 233);
 }
 
-.title-container {
+.title-container-special {
 	grid-area: title-container;
 
 	display: flex;
@@ -114,7 +126,7 @@
 	padding: 0.3vw 0vw 0.2vw 0vw;
 	margin: 0px;
 }
-.title {
+.title-special {
 	color: rgb(185, 185, 185);
 
 	font-size: 1.3vw;
@@ -126,7 +138,7 @@
 	transition: 1s ease;
 }
 
-.description-container {
+.description-container-special {
 	grid-area: description;
 
 	overflow: hidden;
@@ -137,13 +149,13 @@
 
 	transition: 0.5s ease;
 }
-.description-container:hover {
+.description-container-special:hover {
 	overflow: scroll;
 	scrollbar-width: none;
 
 	cursor: default;
 }
-.description-text {
+.description-text-special {
 	overflow: hidden;
 
 	color: rgb(185, 185, 185);
@@ -156,7 +168,7 @@
 
 	margin: 0.5vw 1vw 0vw 1vw;
 }
-.card-divisor {
+.card-divisor-special {
 	background: linear-gradient(
 		to right,
 		rgba(0, 0, 0, 0),
@@ -168,14 +180,14 @@
 	margin-top: 0.7vw;
 	margin-bottom: 0.4vw;
 
-	height: 2px;
-	width: 75%;
+	height: 1%;
+	width: 100%;
 }
 p {
 	padding: 0.01vw;
 }
 
-.btn-container {
+.btn-container-special {
 	grid-area: btn-container;
 
 	display: flex;
@@ -194,7 +206,7 @@ p {
 	margin-top: 0.3vw;
 }
 
-.btn-delete {
+.btn-delete-special {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -217,7 +229,7 @@ p {
 	margin: 0px;
 }
 
-.btn-delete:hover {
+.btn-delete-special:hover {
 	background: var(--main-color-hover);
 
 	color: whitesmoke;
@@ -226,7 +238,7 @@ p {
 	transition: 0.3s ease;
 }
 
-.btn-delete:active {
+.btn-delete-special:active {
 	background: var(--main-color);
 
 	color: rgb(216, 216, 216);

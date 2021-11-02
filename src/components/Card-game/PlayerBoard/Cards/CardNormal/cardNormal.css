@@ -8,32 +8,20 @@
 	user-select: none;
 }
 
-.card-elite {
+.card-normal {
 	/* Modify only R,G or B, to Theme Style */
-	--r: 10;
-	--g: 60;
-	--b: 80;
+	--r: 68;
+	--g: 47;
+	--b: 6;
 	--alpha: 1;
 
 	--main-color: rgba(var(--r), var(--g), var(--b), var(--alpha));
 
 	--second-color: rgba(
-		calc(var(--r) + 5),
-		calc(var(--g) + 5),
-		calc(var(--b) + 5),
+		calc(var(--r) + 10),
+		calc(var(--g) + 10),
+		calc(var(--b) + 10),
 		0.5
-	);
-	--main-border: rgba(
-		calc(var(--r) + 40),
-		calc(var(--g) + 40),
-		calc(var(--b) + 40),
-		calc(var(--alpha))
-	);
-	--main-border-hover: rgba(
-		calc(var(--r) + 60),
-		calc(var(--g) + 60),
-		calc(var(--b) + 60),
-		calc(var(--alpha))
 	);
 
 	--innter-borders: rgba(
@@ -64,7 +52,7 @@
 	);
 }
 
-.card-elite {
+.card-normal {
 	display: grid;
 	grid-template:
 		'title-container' max-content
@@ -79,8 +67,8 @@
 		rgba(27, 24, 3, 1) 100%
 	);
 
-	border: 0.1vw solid var(--main-border);
-	border-radius: 0.1vw 1.5vw 0.1vw 1.5vw;
+	border: 0.1vw solid rgb(105, 93, 70);
+	border-radius: 0.8vw;
 
 	width: 45%;
 	height: 45%;
@@ -92,8 +80,8 @@
 	transition: 2s ease;
 }
 
-.card-elite:hover {
-	border: 0.1vw solid var(--main-border-hover);
+.card-normal:hover {
+	border: 0.1vw solid rgb(231, 184, 97);
 
 	background: linear-gradient(
 		184deg,
@@ -102,14 +90,14 @@
 	);
 }
 
-.card-elite:hover .title-elite {
+.card-normal:hover .title {
 	color: white;
 }
-.card-elite:hover .description-elite {
+.card-normal:hover .description {
 	color: rgb(233, 233, 233);
 }
 
-.title-container-elite {
+.title-container {
 	grid-area: title-container;
 
 	display: flex;
@@ -119,14 +107,14 @@
 	background-color: var(--second-color);
 
 	border-bottom: 0.2vw solid var(--innter-borders);
-	border-radius: 0.1vw 1.5vw 1vw 1vw;
+	border-radius: 0.6vw 0.6vw 1vw 1vw;
 
 	box-shadow: 0vw 0.4vw 0.3vw rgba(0, 0, 0, 0.384);
 
 	padding: 0.3vw 0vw 0.2vw 0vw;
 	margin: 0px;
 }
-.title-elite {
+.title {
 	color: rgb(185, 185, 185);
 
 	font-size: 1.3vw;
@@ -138,7 +126,7 @@
 	transition: 1s ease;
 }
 
-.description-container-elite {
+.description-container {
 	grid-area: description;
 
 	overflow: hidden;
@@ -149,13 +137,13 @@
 
 	transition: 0.5s ease;
 }
-.description-container-elite:hover {
+.description-container:hover {
 	overflow: scroll;
 	scrollbar-width: none;
 
 	cursor: default;
 }
-.description-text-elite {
+.description-text {
 	overflow: hidden;
 
 	color: rgb(185, 185, 185);
@@ -168,7 +156,7 @@
 
 	margin: 0.5vw 1vw 0vw 1vw;
 }
-.card-divisor-elite {
+.card-divisor {
 	background: linear-gradient(
 		to right,
 		rgba(0, 0, 0, 0),
@@ -180,14 +168,14 @@
 	margin-top: 0.7vw;
 	margin-bottom: 0.4vw;
 
-	height: 2px;
-	width: 75%;
+	height: 1%;
+	width: 100%;
 }
 p {
 	padding: 0.01vw;
 }
 
-.btn-container-elite {
+.btn-container {
 	grid-area: btn-container;
 
 	display: flex;
@@ -206,7 +194,7 @@ p {
 	margin-top: 0.3vw;
 }
 
-.btn-delete-elite {
+.btn-delete {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -229,7 +217,7 @@ p {
 	margin: 0px;
 }
 
-.btn-delete-elite:hover {
+.btn-delete:hover {
 	background: var(--main-color-hover);
 
 	color: whitesmoke;
@@ -238,7 +226,7 @@ p {
 	transition: 0.3s ease;
 }
 
-.btn-delete-elite:active {
+.btn-delete:active {
 	background: var(--main-color);
 
 	color: rgb(216, 216, 216);
