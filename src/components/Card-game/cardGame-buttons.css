@@ -3,14 +3,17 @@
 }
 
 .btn {
-	color: aliceblue;
-
 	font-size: 1.2vw;
 	font-weight: 600;
 
-	/* padding: 1vw 0.1vw 1vw 0.1vw; */
+	padding: 0.8vw 0.1vw 0.8vw 0.1vw;
 
-	margin: 1vw 0vw 1vw 0vw;
+	margin: 0.5vw 0vw 0.5vw 0vw;
+}
+.btn-text {
+	color: rgba(244, 250, 255, 0.61);
+	margin: -0.2vw;
+	padding: 0px;
 }
 
 /* -------Btn Normal ------- */
@@ -18,16 +21,16 @@
 	color: var(--center-btn-text-color);
 
 	background-color: rgb(68, 47, 6);
-	border: 0.2vw solid rgb(78, 57, 16);
+	border: 0.2vw solid rgb(114, 84, 24);
 	border-radius: 0.8vw;
 }
 .btn-normal:hover {
 	background-color: rgb(72, 52, 8);
-	border: 0.2vw solid rgb(78, 57, 16);
+	border: 0.2vw solid rgb(150, 113, 38);
 }
 .btn-normal:active {
 	background-color: rgb(68, 47, 6);
-	border: 0.2vw solid rgb(78, 57, 16);
+	border: 0.2vw solid rgb(112, 107, 42);
 }
 
 /* -------Btn Special ------- */
@@ -35,16 +38,16 @@
 	color: var(--center-btn-text-color);
 
 	background-color: rgb(20, 60, 20);
-	border: 0.2vw solid rgb(30, 70, 30);
+	border: 0.2vw solid rgb(45, 107, 45);
 	border-radius: 0.3vw;
 }
 .btn-special:hover {
-	background-color: rgb(25, 65, 25);
-	border: 0.2vw solid rgb(30, 70, 30);
+	background-color: rgb(32, 83, 32);
+	border: 0.2vw solid rgb(41, 117, 41);
 }
 .btn-special:active {
 	background-color: rgb(20, 60, 20);
-	border: 0.2vw solid rgb(30, 70, 30);
+	border: 0.2vw solid rgb(66, 122, 66);
 }
 
 /* -------Btn Elite ------- */
@@ -52,14 +55,14 @@
 	color: var(--center-btn-text-color);
 
 	background-color: rgb(10, 60, 80);
-	border: 0.2vw solid rgb(20, 70, 90);
+	border: 0.2vw solid rgb(36, 99, 124);
 	border-radius: 0.1vw 1vw 0.1vw 1vw;
 }
 .btn-elite:hover {
 	background-color: rgb(16, 66, 86);
-	border: 0.2vw solid rgb(20, 70, 90);
+	border: 0.2vw solid rgb(44, 121, 151);
 }
 .btn-elite:active {
 	background-color: rgb(10, 60, 80);
-	border: 0.2vw solid rgb(20, 70, 90);
+	border: 0.2vw solid rgb(59, 108, 128);
 }

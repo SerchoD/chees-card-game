@@ -3,8 +3,6 @@
 	justify-content: space-evenly;
 	align-items: center;
 
-	background: linear-gradient(160deg, rgb(53, 48, 9) 0%, rgb(29, 26, 3) 100%);
-
 	/* This is for aspect relation of main board, to keep proportion. */
 	width: var(--width-90vw);
 	height: calc(var(--width-90vw) / 2);
@@ -15,4 +13,21 @@
 	box-shadow: 8px 8px 15px black;
 
 	margin: 0.5vw;
+}
+
+.set-theme {
+	width: 1%;
+	height: 2%;
+	border-radius: 100%;
+	align-self: flex-start;
+	opacity: 0.5;
+
+	box-shadow: 0.2vw 0.2vw 0.1vw black;
+
+	border: none;
+
+	margin: 10px -4px -5px -4px;
+}
+.set-theme:hover {
+	opacity: 0.7;
 }
