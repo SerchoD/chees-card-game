@@ -30,9 +30,9 @@
 		calc(var(--alpha))
 	);
 	--main-border-hover: rgba(
-		calc(var(--r) + 60),
-		calc(var(--g) + 60),
-		calc(var(--b) + 60),
+		calc(var(--r) + 100),
+		calc(var(--g) + 100),
+		calc(var(--b) + 120),
 		calc(var(--alpha))
 	);
 
